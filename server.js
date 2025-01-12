@@ -4,8 +4,26 @@ const wss = new WebSocket.Server({ port: 3001 });
 
 function simulateStreamingResponse(ws, message) {
   ws.send(JSON.stringify({ type: 'stream-start' }));
-  
-  const response = `Thank you for your message: "${message}". This is a simulated streaming response.`;
+
+  const response = `Here's a markdown formatted response to your message: "${message}"
+
+## Features Demonstrated
+
+1. **Bold text** and *italic text*
+2. \`Inline code\` formatting
+3. Lists (like this one!)
+
+### Code Block Example
+\`\`\`javascript
+function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+\`\`\`
+
+> This is a blockquote showing markdown capabilities.
+
+You can also add [links](https://example.com) and other markdown features.`;
+
   let currentIndex = 0;
   
   const streamInterval = setInterval(() => {

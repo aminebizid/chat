@@ -80,3 +80,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add Tailwind Typography styles */
+@layer components {
+  .prose {
+    @apply text-foreground;
+  }
+  
+  .prose code {
+    @apply text-sm;
+  }
+  
+  .prose pre {
+    @apply my-2 overflow-x-auto;
+  }
+  
+  .prose ul {
+    @apply my-2;
+  }
+  
+  .prose ol {
+    @apply my-2;
+  }
+  
+  .prose p {
+    @apply my-2;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply font-bold text-foreground;
+  }
+  
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 italic;
+  }
+}
